@@ -26,7 +26,12 @@ public class InitializeActivity extends Activity
 		for (Object objKey : cloudLicenseProperties.keySet()) {
 			String key = (String) objKey;
 			System.out.println("CLOUD LICENSE PROPERTY " + key + ": VALUE = " + cloudLicenseProperties.getProperty(key));
-			cide.cacheGuardaString("URLAPI", cloudLicenseProperties.getProperty(key));
+
+			switch (key){
+				case "1":
+					cide.cacheGuardaString("URLAPI", cloudLicenseProperties.getProperty(key));
+					break;
+			}
 		}
 
 		finishInitializeOK();
