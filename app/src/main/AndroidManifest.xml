@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DummyFiscalHioPos"
-        tools:targetApi="31" >
+        tools:targetApi="31">
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -23,23 +23,42 @@
         </activity>
 
         <activity
+            android:name=".InitializeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="icg.actions.fiscalPrinter.INITIALIZE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".FinalizeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="icg.actions.fiscalPrinter.FINALIZE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".BehaviorActivity"
             android:exported="true">
             <intent-filter>
-            <action android:name="icg.actions.fiscalPrinter.GET_BEHAVIOR"/>
-            <category android:name="android.intent.category.DEFAULT"/>
-        </intent-filter>
+                <action android:name="icg.actions.fiscalPrinter.GET_BEHAVIOR" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
 
         <activity
             android:name=".GetVersionActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="icg.actions.electronicpayment.GET_VERSION" />
+                <action android:name="icg.actions.fiscalPrinter.GET_VERSION" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".SaleActivity"
             android:exported="true">
